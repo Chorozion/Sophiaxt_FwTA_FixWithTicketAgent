@@ -1,0 +1,11 @@
+diff --git a/demo/app.js b/demo/app.js
+index abc1234..def5678 100644
+--- a/demo/app.js
++++ b/demo/app.js
+@@ -3,7 +3,7 @@ const server = http.createServer((req, res) => {
+   if (req.url === '/' ) {
+     res.setHeader('content-type','text/html');
+-    res.end('<html><head></head><body><h1>Demo</h1><p>Cart: 42.0 (bug: no tax)</p></body></html>');
++    res.end('<html><head><title>Demo Store</title></head><body><h1>Demo</h1><p>Cart: 47.88 (incl. tax)</p></body></html>');
+   } else res.end('404');
+ });

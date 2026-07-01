@@ -1,0 +1,8 @@
+{
+  "id": "t-demo-001",
+  "created": "2026-07-01T03:25:00Z",
+  "customer": "alice@example.com",
+  "title": "Cart total is wrong",
+  "description": "When I add two items the total shows 42.0 instead of including tax. Also the page title is missing.",
+  "repro": "1. Go to homepage\n2. Add items\n3. Look at total and page <title>"
+}

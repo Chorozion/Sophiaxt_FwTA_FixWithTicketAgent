@@ -1,0 +1,26 @@
+# FwTA — security first
+node_modules/
+dist/
+.env*
+*.log
+.fwta/
+! .fwta/.gitkeep
+demo/.sophia-data/
+demo/.fwta/
+!demo/.fwta/.gitkeep
+*.sqlite
+*.db
+.DS_Store
+*.pem
+*.key
+
+# Real production test apps (never commit customer or proprietary code)
+TEST APP/
+test-apps/
+real-site/
+prod-copy/
+*.db-shm
+*.db-wal
+
+# Never commit keys or customer code
+# Add per-deployment ignores here

@@ -1,0 +1,42 @@
+{
+  "name": "fix-with-ticket-agent",
+  "version": "0.1.0",
+  "description": "FwTA — Fix With Ticket Agent. Server-side tool that audits Node.js/Express codebases, provides a ticket system, and uses an autonomous agent (powered by Grok/Anthropic/OpenAI) to diagnose bugs, data issues, and billing problems, then proposes minimal safe fixes or escalates with rich debugging context.",
+  "type": "module",
+  "bin": {
+    "fwta": "./src/index.js"
+  },
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "fwta": "node src/index.js",
+    "demo": "node src/index.js demo",
+    "audit": "node src/index.js audit",
+    "ticket": "node src/index.js ticket",
+    "simulate": "node src/index.js simulate-agent",
+    "serve": "node src/index.js serve"
+  },
+  "keywords": [
+    "agent",
+    "tickets",
+    "autofix",
+    "code-audit",
+    "bug-fixing",
+    "express",
+    "nodejs",
+    "support-automation",
+    "safe-fixing"
+  ],
+  "author": "SophiaXT",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/fix-with-ticket-agent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/fix-with-ticket-agent/issues"
+  },
+  "homepage": "https://github.com/your-org/fix-with-ticket-agent#readme",
+  "dependencies": {},
+  "devDependencies": {}
+}

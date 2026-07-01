@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FwTA Tickets (MVP stub)</title>
+  <style>body{font-family:sans-serif;margin:2rem;max-width:720px} .ticket{border:1px solid #ccc;padding:1rem;margin:1rem 0}</style>
+</head>
+<body>
+<h1>FwTA — Tickets (demo)</h1>
+<p>This is a static stub. In the full version the agent server will serve dynamic tickets + actions.</p>
+
+<div class="ticket">
+  <strong>t-demo-001</strong> — Cart total is wrong<br>
+  <small>alice@example.com</small>
+  <p>When I add two items the total shows 42.0 instead of including tax. Also the page title is missing.</p>
+  <button onclick="alert('In real version this would POST to agent')">Run agent on this ticket</button>
+  <pre>See demo/.fwta/tickets/ and .fwta/system-spec.md</pre>
+</div>
+
+<p>Next steps (MVP): the simulate command already shows the exact JSON contract the agent will emit after reading skill.md + spec.</p>
+</body>
+</html>
