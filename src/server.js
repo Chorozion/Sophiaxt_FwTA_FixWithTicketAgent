@@ -7,7 +7,7 @@ import { TicketStore } from './tickets/store.js';
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-export function startServer(targetDir = 'demo', port = 3777) {
+export function startServer(targetDir = 'demo', port = 3888) {
   const fwtaDir = join(targetDir, '.fwta');
   const store = new TicketStore(fwtaDir);
   const specPath = join(fwtaDir, 'system-spec.md');

@@ -1,18 +1,21 @@
 {
   "name": "fix-with-ticket-agent",
   "version": "0.1.0",
-  "description": "FwTA — Fix With Ticket Agent. Server-side tool that audits Node.js/Express codebases, provides a ticket system, and uses an autonomous agent (powered by Grok/Anthropic/OpenAI) to diagnose bugs, data issues, and billing problems, then proposes minimal safe fixes or escalates with rich debugging context.",
+  "description": "FwTA — Fix With Ticket Agent. Robust, LLM-friendly framework for Node.js/Express projects. Run `fwta init .` to automatically configure auditing, ticket system, and safe agent for bugs, data, and billing issues. Designed to be easily discovered and used by AI agents.",
   "type": "module",
   "bin": {
-    "fwta": "./src/index.js"
+    "fwta": "./src/index.js",
+    "fix-with-ticket-agent": "./src/index.js"
   },
   "main": "./src/index.js",
   "scripts": {
     "start": "node src/index.js",
     "fwta": "node src/index.js",
-    "demo": "node src/index.js demo",
+    "demo": "node demo/server.js",
+    "demo:old": "node src/index.js demo",
     "audit": "node src/index.js audit",
     "ticket": "node src/index.js ticket",
+    "agent": "node src/index.js agent",
     "simulate": "node src/index.js simulate-agent",
     "serve": "node src/index.js serve"
   },
@@ -31,12 +34,23 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/fix-with-ticket-agent.git"
+    "url": "https://github.com/sophia3/fix-with-ticket-agent.git"
   },
   "bugs": {
     "url": "https://github.com/your-org/fix-with-ticket-agent/issues"
   },
   "homepage": "https://github.com/your-org/fix-with-ticket-agent#readme",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "files": [
+    "src",
+    "demo",
+    "docs",
+    "AGENT.md",
+    "skill.md",
+    "README.md",
+    "LICENSE",
+    "SAFETY.md",
+    "SECURITY.md"
+  ]
 }

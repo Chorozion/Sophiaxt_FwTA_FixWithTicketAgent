@@ -64,7 +64,11 @@ export function audit(targetDir, options = {}) {
     }
   }
 
-  walk(targetDir);
+  try {
+    walk(targetDir);
+  } catch (e) {
+    console.warn('[fwta] Audit scan had issues:', e.message);
+  }
 
   // Detect framework / DB
   for (const f of importantFiles) {
@@ -81,6 +85,11 @@ export function audit(targetDir, options = {}) {
       summary.dbDriver = 'prisma';
     }
     if (f.content.includes('express') && summary.framework === 'unknown') summary.framework = 'express';
+    if (f.content.includes('http.createServer') && summary.framework === 'unknown') summary.framework = 'node http';
+    if ((f.name === 'data.json' || f.rel.includes('data.json')) && summary.dbDriver === 'unknown') {
+      summary.dbDriver = 'json file-based (demo)';
+      // Force parse tables from schema comment if present in other files
+    }
   }
 
   // Classify
@@ -177,6 +186,7 @@ export function audit(targetDir, options = {}) {
 
   writeFileSync(specPath, md, 'utf8');
   console.log(`[fwta] Dense + DB-aware audit written → ${specPath}`);
+  console.log('[fwta] LLMs: Read this spec first before making changes to the project.');
   return specPath;
 }
 
