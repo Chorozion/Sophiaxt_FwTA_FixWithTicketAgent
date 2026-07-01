@@ -37,9 +37,13 @@
     "url": "git@github.com:Chorozion/Sophiaxt_FwTA_FixWithTicketAgent.git"
   },
   "bugs": {
-    "url": "https://github.com/your-org/fix-with-ticket-agent/issues"
+    "url": "https://github.com/Chorozion/Sophiaxt_FwTA_FixWithTicketAgent/issues"
   },
-  "homepage": "https://github.com/your-org/fix-with-ticket-agent#readme",
+  "homepage": "https://github.com/Chorozion/Sophiaxt_FwTA_FixWithTicketAgent#readme",
+  "funding": {
+    "type": "buy-me-a-coffee",
+    "url": "https://www.buymeacoffee.com/kregonisall"
+  },
   "dependencies": {},
   "devDependencies": {},
   "files": [

@@ -19,6 +19,12 @@ It is **open-source safe by design**: redacted specs, no leaks of internals, jai
 
 **You (or your LLM) still wire it into your app.** See [docs/integration.md](./docs/integration.md).
 
+## Bring your own AI provider
+
+The agent works with any OpenAI-compatible provider or direct SDKs (Grok, Claude, OpenAI, local via Ollama, etc.). Configure via `.fwta/config.json` or environment variables after `fwta init`.
+
+See [docs/setup.md](./docs/setup.md) for full list and examples.
+
 ## Why it exists
 
 Most support tools are either manual ticketing or black-box AI that can break things. FwTA gives you (and any AI) a **controlled, auditable loop**:
@@ -60,6 +66,39 @@ Full walkthrough in [docs/getting-started.md](./docs/getting-started.md) (create
 5. Safety layer blocks dangerous changes by default.
 
 See [AGENT.md](./AGENT.md) for LLM usage and [docs/integration.md](./docs/integration.md) for wiring patterns.
+
+## Operate it with an external AI agent
+
+A project using FwTA is **agent-operable**. Run the agent with your preferred LLM (Grok, Claude, etc.) or hand it the skill + target + keys.
+
+See [AGENT.md](./AGENT.md) for details on how LLMs use it.
+
+## See it in action
+
+**Describe the issue → agent audits → proposes safe fix or escalates.**
+
+Example flow with the demo:
+
+1. `fwta init .` (configures)
+2. File ticket about coupon not updating order.
+3. `fwta agent . <id>` — agent uses the system-spec, proposes minimal patch in the handler.
+4. Review and apply.
+
+The included `demo/` is a small synthetic example of a real site with intentional bugs for testing the flow.
+
+## How it compares
+
+| Feature | FwTA | Manual debugging | Other AI coding tools |
+|---------|------|------------------|-----------------------|
+| Self-hosted / own your code | ✅ | ✅ | Often hosted |
+| Open source | ✅ | N/A | Varies |
+| Audits including databases | ✅ (dense spec) | Manual | Partial |
+| Safe proposals (no blind changes) | ✅ (propose-only default) | N/A | Varies |
+| Escalation with debug steps | ✅ | Yes | Rare |
+| LLM discoverable (AGENT.md) | ✅ | N/A | No |
+| Works with any provider | ✅ (Grok, Claude, OpenAI, local) | N/A | Limited |
+
+*This is a young open-source project — see the honest limitations below. The trade-off vs. hosted builders is that you run and update it yourself.*
 
 ## Architecture
 
@@ -122,6 +161,12 @@ See [SECURITY.md](./SECURITY.md) and [SAFETY.md](./SAFETY.md).
 - You must wire the pieces (see docs/integration.md). Not a plug-in for arbitrary stacks yet.
 - Tested on real production Node sites (patterns reproduced in demo/), but your mileage varies.
 - Simulation mode in this repo for safety; connect real keys for production use.
+
+## Support
+
+If FwTA helps you or saves you time, consider supporting the project:
+
+[![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=kregonisall&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/kregonisall)
 
 ## License
 
